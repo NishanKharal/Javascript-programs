@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiment 5 – Dynamic Web Pages</title>
+  <style>
+    body   { font-family: Arial, sans-serif; max-width: 750px; margin: 40px auto; padding: 0 20px; }
+    h1     { color: #2c3e50; }
+    h2     { color: #34495e; margin-top: 28px; }
+    button { padding: 8px 16px; margin: 4px; cursor: pointer; background: #16a085; color: #fff; border: none; border-radius: 4px; }
+    button:hover { background: #138d75; }
+    input[type="text"] { padding: 7px; border: 1px solid #bdc3c7; border-radius: 4px; width: 220px; }
+    #itemList  { background: #ecf0f1; padding: 12px 20px; border-radius: 4px; min-height: 40px; }
+    #colorBox  { width: 200px; height: 80px; background: #3498db; border-radius: 6px; margin: 10px 0; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: bold; }
+    #counter   { font-size: 2rem; font-weight: bold; color: #2c3e50; }
+    #loopOutput { background: #ecf0f1; padding: 10px; border-radius: 4px; margin-top: 8px; }
+    #tableOutput { margin-top: 8px; border-collapse: collapse; }
+    #tableOutput th, #tableOutput td { border: 1px solid #bdc3c7; padding: 6px 12px; }
+    #tableOutput th { background: #2c3e50; color: #fff; }
+  </style>
+</head>
+<body>
+
+  <h1>Experiment 5: Dynamic Web Pages</h1>
+  <p>JavaScript events, conditional logic, loops, and innerHTML</p>
+
+  <!-- ── 1. Events ─────────────────────────────────────────────────────── -->
+  <h2>1. JavaScript Events</h2>
+  <div id="colorBox">Click me!</div>
+  <button id="resetBtn">Reset Color</button>
+
+  <!-- ── 2. Counter (conditional logic) ───────────────────────────────── -->
+  <h2>2. Counter with Conditional Logic</h2>
+  <p id="counter">0</p>
+  <button onclick="increment()">+1</button>
+  <button onclick="decrement()">−1</button>
+  <button onclick="resetCounter()">Reset</button>
+  <p id="counterMsg"></p>
+
+  <!-- ── 3. Loops + innerHTML ──────────────────────────────────────────── -->
+  <h2>3. Loops &amp; innerHTML</h2>
+  <button onclick="renderNumbers()">Render 1–10</button>
+  <button onclick="renderTable()">Render Multiplication Table (5×)</button>
+  <div id="loopOutput"></div>
+  <table id="tableOutput"></table>
+
+  <!-- ── 4. Dynamic list ───────────────────────────────────────────────── -->
+  <h2>4. Dynamic List</h2>
+  <input type="text" id="itemInput" placeholder="Enter item name" />
+  <button onclick="addItem()">Add Item</button>
+  <button onclick="clearList()">Clear All</button>
+  <div id="itemList"><em>No items yet…</em></div>
+
+  <!-- ── 5. Mouse & Keyboard events ───────────────────────────────────── -->
+  <h2>5. Mouse &amp; Keyboard Events</h2>
+  <input type="text" id="keyInput" placeholder="Type something…" oninput="onType(event)" />
+  <p id="keyOutput">Typed: </p>
+
+  <script src="events.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiment 4 – DOM Manipulation</title>
+  <style>
+    body   { font-family: Arial, sans-serif; max-width: 750px; margin: 40px auto; padding: 0 20px; }
+    h1     { color: #2c3e50; }
+    h2     { color: #34495e; margin-top: 28px; }
+    button { padding: 8px 16px; margin: 4px; cursor: pointer; background: #e67e22; color: #fff; border: none; border-radius: 4px; }
+    button:hover { background: #ca6f1e; }
+    .highlight { background: #f9e79f; padding: 4px 8px; border-radius: 3px; }
+    .demoClass { border: 1px solid #bdc3c7; padding: 6px; margin: 4px 0; border-radius: 3px; }
+    #log   { background: #ecf0f1; padding: 12px; border-radius: 4px; margin-top: 16px; min-height: 40px; }
+    ul#dynamicList { padding-left: 20px; }
+  </style>
+</head>
+<body>
+
+  <h1>Experiment 4: DOM Manipulation</h1>
+
+  <!-- getElementById -->
+  <h2>1. getElementById</h2>
+  <p id="demoId">Original text (id="demoId")</p>
+  <button onclick="demoGetById()">Change by ID</button>
+
+  <!-- getElementsByClassName -->
+  <h2>2. getElementsByClassName</h2>
+  <div class="demoClass">Class element 1</div>
+  <div class="demoClass">Class element 2</div>
+  <div class="demoClass">Class element 3</div>
+  <button onclick="demoGetByClass()">Highlight by Class</button>
+
+  <!-- getElementsByName -->
+  <h2>3. getElementsByName</h2>
+  <input type="text" name="demoName" placeholder="Field 1" style="margin:4px;padding:6px;" />
+  <input type="text" name="demoName" placeholder="Field 2" style="margin:4px;padding:6px;" />
+  <button onclick="demoGetByName()">Fill by Name</button>
+
+  <!-- getElementsByTagName -->
+  <h2>4. getElementsByTagName</h2>
+  <p>Paragraph A</p>
+  <p>Paragraph B</p>
+  <button onclick="demoGetByTag()">Count &lt;p&gt; Tags</button>
+
+  <!-- Dynamic list -->
+  <h2>5. Dynamic List (createElement + appendChild)</h2>
+  <ul id="dynamicList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
+  <button onclick="addListItem()">Add Item</button>
+  <button onclick="removeLastItem()">Remove Last</button>
+
+  <div id="log">Console log will appear here…</div>
+
+  <script src="dom.js"></script>
+</body>
+</html>

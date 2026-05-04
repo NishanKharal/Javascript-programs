@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiment 2 – Embedding & Linking JavaScript with HTML</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; }
+    h1   { color: #2c3e50; }
+    button { padding: 8px 16px; margin: 6px 4px; cursor: pointer; background: #3498db; color: #fff; border: none; border-radius: 4px; }
+    button:hover { background: #2980b9; }
+    #output { margin-top: 20px; padding: 12px; background: #ecf0f1; border-radius: 4px; min-height: 40px; }
+  </style>
+</head>
+<body>
+
+  <h1>Experiment 2: Embedding &amp; Linking JavaScript with HTML</h1>
+
+  <!-- ── INTERNAL SCRIPT DEMO ─────────────────────────────────────────── -->
+  <h2>1. Internal Script (inline &lt;script&gt; tag)</h2>
+  <p id="internalMsg">Waiting for internal script…</p>
+  <button onclick="runInternal()">Run Internal Script</button>
+
+  <!-- ── EXTERNAL SCRIPT DEMO ─────────────────────────────────────────── -->
+  <h2>2. External Script (script.js)</h2>
+  <p id="externalMsg">Waiting for external script…</p>
+  <button onclick="runExternal()">Run External Script</button>
+
+  <!-- ── COMMENTS & KEYWORDS DEMO ─────────────────────────────────────── -->
+  <h2>3. Comments &amp; Keywords</h2>
+  <button onclick="showKeywords()">Show Keywords Demo</button>
+  <div id="output"></div>
+
+  <!-- ══ INTERNAL SCRIPT ══════════════════════════════════════════════════ -->
+  <script>
+    /*
+     * Internal JavaScript block
+     * Demonstrates: var, let, const, typeof, if/else
+     */
+
+    // Single-line comment: greet the user
+    function runInternal() {
+      var  greeting  = 'Hello from an internal <script> block!'; // var keyword
+      let  language  = 'JavaScript';                              // let keyword
+      const version  = 'ES2023';                                  // const keyword
+
+      document.getElementById('internalMsg').textContent =
+        `${greeting} | Language: ${language} | Version: ${version}`;
+    }
+
+    function showKeywords() {
+      /*
+       * Multi-line comment:
+       * Demonstrating reserved keywords and typeof operator
+       */
+      let output = '';
+
+      // typeof keyword
+      output += `typeof 42        → ${typeof 42}<br>`;
+      output += `typeof 'hello'   → ${typeof 'hello'}<br>`;
+      output += `typeof true      → ${typeof true}<br>`;
+      output += `typeof null      → ${typeof null}<br>`;
+      output += `typeof undefined → ${typeof undefined}<br>`;
+      output += `typeof {}        → ${typeof {}}<br>`;
+      output += `typeof []        → ${typeof []}<br>`;
+
+      // instanceof keyword
+      const arr = [1, 2, 3];
+      output += `<br>[1,2,3] instanceof Array → ${arr instanceof Array}<br>`;
+
+      // in keyword
+      const obj = { name: 'Alice', age: 25 };
+      output += `'name' in obj → ${'name' in obj}<br>`;
+
+      // void keyword
+      output += `void 0 → ${void 0}<br>`;
+
+      document.getElementById('output').innerHTML = output;
+    }
+  </script>
+
+  <!-- ══ EXTERNAL SCRIPT (loaded at bottom so DOM is ready) ═══════════════ -->
+  <script src="script.js"></script>
+
+</body>
+</html>

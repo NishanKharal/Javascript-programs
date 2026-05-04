@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiment 3 – BOM Objects</title>
+  <style>
+    body  { font-family: Arial, sans-serif; max-width: 750px; margin: 40px auto; padding: 0 20px; }
+    h1    { color: #2c3e50; }
+    h2    { color: #34495e; margin-top: 28px; }
+    button { padding: 8px 16px; margin: 4px; cursor: pointer; background: #8e44ad; color: #fff; border: none; border-radius: 4px; }
+    button:hover { background: #7d3c98; }
+    pre   { background: #ecf0f1; padding: 12px; border-radius: 4px; white-space: pre-wrap; word-break: break-all; }
+    #output { margin-top: 16px; }
+  </style>
+</head>
+<body>
+
+  <h1>Experiment 3: BOM Objects</h1>
+  <p>Browser Object Model – Window, History, Navigator, Screen</p>
+
+  <!-- Window -->
+  <h2>1. Window Object</h2>
+  <button onclick="showWindow()">Show Window Info</button>
+  <button onclick="openNewTab()">Open New Tab</button>
+  <button onclick="scrollDemo()">Scroll to Top</button>
+
+  <!-- History -->
+  <h2>2. History Object</h2>
+  <button onclick="showHistory()">Show History Length</button>
+  <button onclick="history.back()">Go Back</button>
+  <button onclick="history.forward()">Go Forward</button>
+
+  <!-- Navigator -->
+  <h2>3. Navigator Object</h2>
+  <button onclick="showNavigator()">Show Navigator Info</button>
+
+  <!-- Screen -->
+  <h2>4. Screen Object</h2>
+  <button onclick="showScreen()">Show Screen Info</button>
+
+  <div id="output"><pre id="result">Click a button to see BOM info…</pre></div>
+
+  <script src="bom.js"></script>
+</body>
+</html>
